@@ -10,11 +10,8 @@
 		}
 	</style>
 
-	<script type="text/javascript">
-		function imprimir(){
-			window.print();
-		}
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="myscript.js"></script>
     
 </head>
 <body>
@@ -23,13 +20,25 @@
 	<h2>Novo destaque</h2>
 	<p class="cor-vermelha">
 		Descrição vinda do formulário: 
+
+
 		<?php 
-			if(isset($_POST['enviado'])){
-				foreach($_POST['enviado'] as $env){
-					echo "$env<br>";
+		$nome = $_POST['nome'];
+		$cpf = $_POST['cpf'];
+		$dtNascimento = $_POST['dtNascimento'];
+		$enderecoLogradouro = $_POST['enderecoLogradouro'];
+		$enderecoNumero = $_POST['enderecoNumero'];
+		$enderecoBairro = $_POST['enderecoBairro'];
+		$enderecoCidade = $_POST['enderecoCidade'];
+		
+			if(isset($nome)){
+				foreach($nome as $n){
+					echo "$n<br>";
 				}
 			}
 		?>
+
+
 	</p>
 	<button onclick="imprimir()">Imprimir</button>
 </body>
