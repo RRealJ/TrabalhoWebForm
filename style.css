@@ -7,6 +7,7 @@
 label{
     font-size: 20px;
     text-align: center;
+
 }
 
 input{
@@ -26,23 +27,6 @@ body{
 	padding: 50px 100px 100px 100px;	
 	justify-content: center;
     background-color: #f2f2f2;
-}
-
-.container{
-    border: 3px solid black;
-}
-
-
-.col {
-    gap: 5px;
-}
-
-.row {
-    border: 1px solid black;
-}
-
-#info_pessoal {
-    border-bottom: 3px
 }
 
 #campo_gerar {
