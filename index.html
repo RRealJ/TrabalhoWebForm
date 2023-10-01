@@ -10,32 +10,40 @@
 
 <body>
 	
-	<h1>Informações:</h1>
+	<div class="d-flex flex-row justify-content-between">
+		<h1>Informações:</h1>
+		<button type="button" class="btn btn-outline-secondary" name="addCampos" onclick="addCampos()">Adicionar Campos</button>
+	</div>
+
 	<form name="formulario" onsubmit="return(validate())" method="POST" action="window_print.php">
 		<div class="form-group" id="formBody">	
 			
 			<label for="nome">Nome</label>
-			<input type="text" name="nome[]" placeholder="Digite seu Nome">
+			<input type="text" name="nome" id="nome" placeholder="Digite seu Nome" >
 			<label for="cpf">CPF</label>
-			<input type="text" name="cpf[]" placeholder="Digite seu CPF">
+			<input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
 			<label for="dtNascimento">Data de Nascimento</label>
-			<input type="text" name="dtNascimento[]" placeholder="Digite a Data">
+			<input type="text" name="dtNascimento" id="dtNascimento" placeholder="dd/mm/aaaa">
 			<br>
 			<br>
 			<label>Endereço</label>
-			<input type="text" name="enderecoLogradouro[]" placeholder="Digite o Logradouro">
-			<input type="text" name="enderecoNumero[]" placeholder="Digite o Número">
-			<input type="text" name="enderecoBairro[]" placeholder="Digite o Bairro">
-			<input type="text" name="enderecoCidade[]" placeholder="Digite a Cidade">
-			<button type="button" class="btn btn-outline-secondary" name="addCampos" onclick="addCampos()"> + </button>
-	
+			<input type="text" name="enderecoLogradouro" id="enderecoLogradouro" placeholder="Logradouro">
+			<input type="text" name="enderecoNumero" id="enderecoNumero" placeholder="Número">
+			<input type="text" name="enderecoBairro" id="enderecoBairro" placeholder="Bairro">
+			<input type="text" name="enderecoCidade" id="enderecoCidade" placeholder="Cidade">
+			<br>
+			<br>
+			<label for="experiencias">Experiência: </label>
+			<textarea name="experiencias[]" rows="4" cols="100"></textarea>
+			
 		</div>
 		<div class="row" id="gerar">
-			<input type="submit" class="btn btn-primary" value="Gerar" id="campo_gerar">
+			<input type="submit" class="btn btn-primary" value="Gerar" id="campoGerar">
 		</div>
 	</form>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>     
 	<script src="myscript.js"></script>
 
 </body>

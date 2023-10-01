@@ -1,15 +1,32 @@
+$(document).ready(function(){
+    $('#cpf').mask('000.000.000-00');
+    $('#dtNascimento').mask('00/00/0000');
+});  
+
+
 function addCampos(){
     var div = document.getElementById('formBody');
-    var linha = '<label for="nome">Nome</label><input type="text" name="nome[]" placeholder="Digite seu Nome"><label for="cpf">CPF</label><input type="text" name="cpf[]" placeholder="Digite seu CPF"><label for="dtNascimento">Data de Nascimento</label><input type="text" name="dtNascimento[]" placeholder="Digite a Data"><br><br><label>Endereço</label><input type="text" name="enderecoLogradouro[]" placeholder="Digite o Logradouro"><input type="text" name="enderecoNumero[]" placeholder="Digite o Número"><input type="text" name="enderecoBairro[]" placeholder="Digite o Bairro"><input type="text" name="enderecoCidade[]" placeholder="Digite a Cidade"><button type="button" class="btn btn-outline-secondary" name="addCampos" onclick="addCampos()"> + </button>';
-    div.innerHTML += linha;
+    div.innerHTML += '<br><br><label for="experciencia">Experiência: </label><textarea name="experiencias[]" rows="4" cols="100"></textarea>';
+    // div.innerHTML += linha;
 }
 
 
 function validate(){
-    if (document.formulario.nome.value.length < 3){
-        alert("Escreva mais");
+    var nome = document.getElementById('nome');
+    var endNumero = document.getElementById('enderecoNumero');
+
+    if (nome.value.length < 1){
+        alert("Nome Curto");
         return false;
     }
+
+    if (!/^\d+$/.test(endNumero.value)) { //testando com regex
+        alert("Coloque apenas números no número do endereço");
+        return false;
+    }
+
+    //Para agilizar teste não coloquei validação de cpf
+
     return true;
 }
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Imprimindo uma Página</title>
+	<title>Gerando Curriculo</title>
 	<style type="text/css">
 		.cor-vermelha{
 			color: red;
@@ -26,16 +26,28 @@
 		$nome = $_POST['nome'];
 		$cpf = $_POST['cpf'];
 		$dtNascimento = $_POST['dtNascimento'];
-		$enderecoLogradouro = $_POST['enderecoLogradouro'];
-		$enderecoNumero = $_POST['enderecoNumero'];
-		$enderecoBairro = $_POST['enderecoBairro'];
-		$enderecoCidade = $_POST['enderecoCidade'];
-		
-			if(isset($nome)){
-				foreach($nome as $n){
-					echo "$n<br>";
-				}
+		$endLogra = $_POST['enderecoLogradouro'];
+		$endNumero = $_POST['enderecoNumero'];
+		$endBairro = $_POST['enderecoBairro'];
+		$endCidade = $_POST['enderecoCidade'];
+		$experiencias = $_POST['experiencas'];
+		$i = 0;		
+
+		if(isset($nome)){
+			echo "$n<br>";
+			echo "$cpf<br>";
+			echo "$dtNascimento<br>";
+			echo "$endLogra<br>";
+			echo "$endNuemro<br>";
+			echo "$endBairro<br>";
+			echo "$endCidade<br>";
+			foreach($nome as $n){
+				echo "$experiencias[$i]<br><br>";
+				$i++;
 			}
+		}
+		
+		$i++;
 		?>
 
 
