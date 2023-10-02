@@ -7,20 +7,18 @@ $(document).ready(function(){
 function addCampos(){
     var div = document.getElementById('formBody');
     div.innerHTML += '<br><br><label for="experciencia">Experiência: </label><textarea name="experiencias[]" rows="4" cols="100"></textarea>';
-    // div.innerHTML += linha;
 }
-
 
 function validate(){
     var nome = document.getElementById('nome');
     var endNumero = document.getElementById('enderecoNumero');
 
     if (nome.value.length < 1){
-        alert("Nome Curto");
+        alert("Preencha o nome...");
         return false;
     }
 
-    if (!/^\d+$/.test(endNumero.value)) { //testando com regex
+    if (!/^\d+$/.test(endNumero.value)) { //com negação, regex se contém somente digitos 
         alert("Coloque apenas números no número do endereço");
         return false;
     }

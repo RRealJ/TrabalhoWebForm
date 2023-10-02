@@ -9,13 +9,12 @@
 			color: red;
 		}
 	</style>
-
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<script src="myscript.js"></script>
-    
+	<script src="myscript.js"></script>  
 </head>
+
 <body>
-	<h1>Título da Página</h1>
+	<h1>Gerador de Curriculo</h1>
 	<p>Descrição longa em campo paragráfo.</p>
 	<h2>Novo destaque</h2>
 	<p class="cor-vermelha">
@@ -34,23 +33,22 @@
 		$i = 0;		
 
 		if(isset($nome)){
-			echo "$n<br>";
+			echo "$nome<br>";
 			echo "$cpf<br>";
 			echo "$dtNascimento<br>";
 			echo "$endLogra<br>";
-			echo "$endNuemro<br>";
+			echo "$endNumero<br>";
 			echo "$endBairro<br>";
 			echo "$endCidade<br>";
-			foreach($nome as $n){
-				echo "$experiencias[$i]<br><br>";
+			foreach($experiencias as $exp){
+				echo "$exp[$i]<br><br>";
 				$i++;
 			}
 		}
 		
 		$i++;
 		?>
-
-
+		
 	</p>
 	<button onclick="imprimir()">Imprimir</button>
 </body>
