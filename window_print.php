@@ -61,7 +61,7 @@
 				if(isset($_POST['experiencias'])){
 					$experiencias = $_POST['experiencias'];
 					foreach ($experiencias as $exp) {
-						$expFormatado = wordwrap($exp, 100, "<br />\n");
+						$expFormatado = wordwrap($exp, 120, "<br />\n");
 						echo "$expFormatado<br><br>";
 					}
 				}
