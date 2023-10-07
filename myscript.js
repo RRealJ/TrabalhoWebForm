@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
 function addCampos(){
-    var div = document.getElementById('formBody');
+    var div = document.getElementById('formBodyExp');
     div.innerHTML += '<br><br><label for="experciencia">Experiência: </label><textarea name="experiencias[]" rows="4" cols="100"></textarea>';
 }
 
