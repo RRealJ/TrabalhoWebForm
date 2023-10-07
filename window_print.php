@@ -28,8 +28,6 @@
 		$endNumero = $_POST['enderecoNumero'];
 		$endBairro = $_POST['enderecoBairro'];
 		$endCidade = $_POST['enderecoCidade'];
-		$experiencias = $_POST['experiencas'];
-		$i = 0;		
 
 		if(isset($nome)){
 			echo "$nome<br>";
@@ -39,15 +37,14 @@
 			echo "$endNumero<br>";
 			echo "$endBairro<br>";
 			echo "$endCidade<br>";
-			if(isset($experiencias)){
-				foreach($experiencias as $exp){
-					echo "$exp[$i]<br><br>";
-					$i++;
+
+			if(isset($_POST['experiencias'])){
+				$experiencias = $_POST['experiencias'];
+				foreach ($experiencias as $exp) {
+					echo "$exp<br><br>";
 				}
-			}
+			}	
 		}
-		
-		$i++;
 		?>
 		
 	</p>
