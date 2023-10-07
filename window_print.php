@@ -13,6 +13,28 @@
 	<script src="myscript.js"></script>  
 </head>
 
+<?php 
+function quebrarLinha($texto) {
+
+	$palavrasMax = 30;
+	$textoFormatado = "";
+	$i = 0;
+	$palavras = explode(" ", $texto);
+
+	foreach ($palavras as $p) {
+		$textoFormatado = $textoFormatado . " " . $p;
+		$i++;
+
+		if ($i == $palavrasMax){
+			echo "$textoFormatado<br>";
+			$textoFormatado = "";	
+			$i = 0;
+		}
+	}
+}
+
+?>
+
 <body>
 	<h1>Gerador de Curriculo</h1>
 	<p>Descrição longa em campo paragráfo.</p>
@@ -30,21 +52,25 @@
 		$endCidade = $_POST['enderecoCidade'];
 
 		if(isset($nome)){
-			echo "$nome<br>";
-			echo "$cpf<br>";
-			echo "$dtNascimento<br>";
-			echo "$endLogra<br>";
-			echo "$endNumero<br>";
-			echo "$endBairro<br>";
-			echo "$endCidade<br>";
+			echo "<br>----------------------------------------------------------------------------------------------------------------<br>";
+			echo "Nome: $nome<br>";
+			echo "CPF: $cpf<br>";
+			echo "Data de Nascimento: $dtNascimento<br>";
+			echo "Endereço: $endLogra, $endNumero, $endBairro - $endCidade<br>";
+			echo "----------------------------------------------------------------------------------------------------------------<br>";
+			echo "Experiências: <br><br>";
 
 			if(isset($_POST['experiencias'])){
 				$experiencias = $_POST['experiencias'];
 				foreach ($experiencias as $exp) {
-					echo "$exp<br><br>";
+					echo "->";
+					quebrarLinha($exp);
+					echo "<-<br><br>";
 				}
 			}	
+			echo "----------------------------------------------------------------------------------------------------------------<br>";
 		}
+
 		?>
 		
 	</p>
