@@ -20,7 +20,6 @@
 	<p class="cor-vermelha">
 		Descrição vinda do formulário: 
 
-
 		<?php 
 		$nome = $_POST['nome'];
 		$cpf = $_POST['cpf'];
@@ -40,9 +39,11 @@
 			echo "$endNumero<br>";
 			echo "$endBairro<br>";
 			echo "$endCidade<br>";
-			foreach($experiencias as $exp){
-				echo "$exp[$i]<br><br>";
-				$i++;
+			if(isset($experiencias)){
+				foreach($experiencias as $exp){
+					echo "$exp[$i]<br><br>";
+					$i++;
+				}
 			}
 		}
 		
